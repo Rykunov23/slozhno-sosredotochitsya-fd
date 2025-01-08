@@ -266,7 +266,7 @@
     grid-column: 2 / 4;
   }
 
-  .gallery.content__section  {
+  .gallery.content__section {
     grid-template-rows: auto 192px 230px 318px;
   }
 
@@ -331,7 +331,7 @@
     grid-row: 2 / 3;
   }
 
-  .gallery.content__section  {
+  .gallery.content__section {
     grid-template-rows: auto 260px 315px 433px;
   }
 }
