@@ -2,4 +2,338 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color-card);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  padding: 10px;
+  block-size: max(100vh, 668px);
+  position: relative;
+  justify-items: end;
+  align-items: start;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  display: block;
+  border-inline-end: 1px solid var(--color-menu);
+  border-block-start: 1px solid var(--color-menu);
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  display: block;
+  border-inline-start: 1px solid var(--color-menu);
+  border-block-end: 1px solid var(--color-menu);
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+
+.header__hidden {
+  position: absolute;
+  display: var(--header-hiden);
+  inset-block-start: 10px;
+  inset-inline-end: 18px;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+}
+
+.header__hidden::after {
+  content: '';
+  border-radius: 50%;
+  background-color:  var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+}
+
+.header__theme-menu {
+  margin-block-start: 63px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  color: var(--color-menu);
+  background-color: transparent;
+  text-transform: lowercase;
+  cursor: pointer;
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--hover--color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--color-menu);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--color-menu);
+}
+
+.decoration_title {
+  color: var(--color-title);
+  justify-self: start;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  max-inline-size: 364px;
+  margin-block-start: 56px;
+}
+
+.title-decor {
+  font-weight: 700;
+  color: var(--color-title-decor);
+  background-color: var(--accent-color);
+}
+
+.content {
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.content__section-title {
+  color: var(--color-menu);
+}
+
+.content__section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.title-decor.regular {
+  font-weight: 400;
+}
+
+.content__section.gallery {
+  grid-template-rows: auto 142px 355px 237px 355px 237px;
+}
+
+.gallery {
+  gap: 10px;
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.image-item {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  block-size: max(100vh, 668px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 10px;
+  align-items: center;
+}
+
+.footer::before {
+  content: '';
+  display: block;
+  justify-self: end;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-end: 1px solid var(--color-menu);
+  border-block-start: 1px solid var(--color-menu);
+}
+
+.footer::after {
+  content: '';
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-start: 1px solid var(--color-menu);
+  border-block-end: 1px solid var(--color-menu);
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .header::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .header__hidden {
+    inset-block-start: 20px;
+    inset-inline-end: 28px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 172px;
+  }
+
+  .decoration_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  h1.decoration_title {
+    margin-inline-start: -20px;
+  }
+
+  .header__text {
+    margin-block-start: 163px;
+  }
+
+  .content {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .content__section {
+    grid-template-columns: 234px 1fr 1fr;
+  }
+
+  .hard .content__section-card {
+    grid-column: 2 / 4;
+  }
+
+  .concentration .content__section-card {
+    grid-column: span 3;
+  }
+
+  .options .content__section-title {
+    grid-row: span 2;
+  }
+
+  .options .main__section-subtitle {
+    grid-column:  2 / 4;
+  }
+
+  .options .content__section-card {
+    grid-column: 2 / 4;
+  }
+
+  .gallery.content__section  {
+    grid-template-rows: auto 192px 230px 318px;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+  
+  .gallery .title-decor {
+    grid-column: span 3;
+  }
+
+  .image:nth-of-type(1) {
+    grid-column: span 2;
+  }
+
+  .image:nth-of-type(2) {
+    grid-row: span 2;
+  }
+
+  .image:nth-of-type(3) {
+    grid-row: 3 / 5;
+  }
+
+  .image:nth-of-type(5) {
+    grid-column: span 2;
+  }
+  
+  .footer {
+    padding: 20px;
+  }
+
+  .footer .decoration_title {
+    justify-self: center;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-start: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .decoration_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+    margin-block-start: 115px;
+  }
+
+  .content__section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .concentration .content__section-card {
+    grid-column: span 1;
+    grid-row: 2 / 3;
+  }
+
+  .gallery.content__section  {
+    grid-template-rows: auto 260px 315px 433px;
+  }
+}
+
+
