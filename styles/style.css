@@ -307,15 +307,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .main__section-title {
-    grid-column: 1 / 4;
-    justify-self: start;
+  .concentration .content__section-title {
+    grid-column: span 3;
     max-inline-size: 315px;
   }
 
   .concentration .content__section-card {
     grid-column: span 1;
-    grid-row: 2 ;
   }
   
   .gallery.content__section {
